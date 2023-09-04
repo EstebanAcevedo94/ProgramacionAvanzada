@@ -45,6 +45,9 @@
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
             btnLimpiar = new Button();
+            btnModificar = new Button();
+            lblValorUF = new Label();
+            lblValorDolar = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -114,12 +117,13 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(24, 27);
+            btnEliminar.Location = new Point(81, 27);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 3;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click_1;
             // 
             // txtRut
             // 
@@ -158,7 +162,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(240, 27);
+            btnGuardar.Location = new Point(0, 27);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 3;
@@ -173,14 +177,15 @@
             dataGridView1.Location = new Point(414, 12);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(949, 327);
             dataGridView1.TabIndex = 6;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // panel1
             // 
             panel1.Controls.Add(btnLimpiar);
+            panel1.Controls.Add(btnModificar);
             panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(btnEliminar);
             panel1.Location = new Point(35, 264);
@@ -190,19 +195,49 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(133, 27);
+            btnLimpiar.Location = new Point(256, 27);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(75, 23);
-            btnLimpiar.TabIndex = 3;
+            btnLimpiar.TabIndex = 5;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
-            btnLimpiar.Click += btnGuardar_Click;
+            btnLimpiar.Click += button2_Click;
+            // 
+            // btnModificar
+            // 
+            btnModificar.Location = new Point(175, 27);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(75, 23);
+            btnModificar.TabIndex = 4;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += button1_Click;
+            // 
+            // lblValorUF
+            // 
+            lblValorUF.AutoSize = true;
+            lblValorUF.Location = new Point(35, 362);
+            lblValorUF.Name = "lblValorUF";
+            lblValorUF.Size = new Size(81, 15);
+            lblValorUF.TabIndex = 8;
+            lblValorUF.Text = "Valor de la UF:";
+            // 
+            // lblValorDolar
+            // 
+            lblValorDolar.AutoSize = true;
+            lblValorDolar.Location = new Point(35, 398);
+            lblValorDolar.Name = "lblValorDolar";
+            lblValorDolar.Size = new Size(86, 15);
+            lblValorDolar.TabIndex = 8;
+            lblValorDolar.Text = "Valor del Dólar:";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1375, 367);
+            ClientSize = new Size(1375, 435);
+            Controls.Add(lblValorDolar);
+            Controls.Add(lblValorUF);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(txtDate);
@@ -240,10 +275,12 @@
         private TextBox txtTelefono;
         private TextBox txtDireccion;
         private DateTimePicker txtDate;
-        private Button btnEditar;
         private Button btnGuardar;
         private DataGridView dataGridView1;
         private Panel panel1;
+        private Label lblValorUF;
+        private Label lblValorDolar;
         private Button btnLimpiar;
+        private Button btnModificar;
     }
 }

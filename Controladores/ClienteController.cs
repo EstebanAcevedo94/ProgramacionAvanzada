@@ -59,7 +59,10 @@ namespace Practico1.Controladores
                 clienteExistente.FechaRegistro = cliente.FechaRegistro;
             }
         }
-
+        public Cliente ObtenerClientePorRut(string rut)
+        {
+            return listaClientes.FirstOrDefault(c => c.Rut == rut);
+        }
         public void IngresarUltimaFactura(string rut, int numeroFactura, int monto)
         {
             Cliente cliente = listaClientes.FirstOrDefault(c => c.Rut == rut);
